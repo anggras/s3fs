@@ -1,0 +1,8 @@
+commands:
+  s3fs-refresh-cache:
+    aliases: ['s3fs-rc']
+    description: 'Refresh the S3 File System metadata cache.'
+
+  s3fs-copy-local:
+    aliases: ['s3fs-cl']
+    description: 'Copy local files from your public and/or private file system(s) into your S3 bucket, if s3fs is configured to take them over.'
