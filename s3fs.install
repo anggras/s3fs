@@ -1,11 +1,11 @@
 <?php
 
-use Drupal\Core\Database\Database;
-
 /**
  * @file
  * Install, update and uninstall functions for the S3 File System module.
  */
+
+use Drupal\Core\Database\Database;
 
 /**
  * Implements hook_requirements().
@@ -111,4 +111,3 @@ function s3fs_install() {
   }
 
 }
-
