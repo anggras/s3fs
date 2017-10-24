@@ -28,7 +28,7 @@ class S3fsException extends Exception {}
  */
 function s3fs_stream_wrappers() {
   // On bootstrap of a fresh install the composer autoloader needs to be loaded.
-  composer_manager_register_autoloader();
+  //composer_manager_register_autoloader();
   return array(
     's3' => array(
       'name' => 'S3 File System',
