@@ -151,14 +151,14 @@ class S3fsService implements S3fsServiceInterface {
         // If defined path use that otherwise SDK will check home directory.
         if (!empty($config['credentials_file'])) {
           $provider = CredentialProvider::ini(NULL, $config['credentials_file']);
+          // Cache the results in a memoize function to avoid loading and parsing
+          // the ini file on every API operation.
+          $provider = CredentialProvider::memoize($provider);
         }
         else {
-          // Assume an instance profile provider if no path.
-          $provider = CredentialProvider::instanceProfile();
+          // Use default provider
+          $provider = CredentialProvider::defaultProvider();
         }
-        // Cache the results in a memoize function to avoid loading and parsing
-        // the ini file on every API operation.
-        $provider = CredentialProvider::memoize($provider);
         $client_config['credentials'] = $provider;
       }
       else {
